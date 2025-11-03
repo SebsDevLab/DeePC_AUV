@@ -1,0 +1,12 @@
+# Ignore large documentation folders in language stats
+MSS/** linguist-vendored
+documentation/** linguist-vendored
+
+# Ignore Simulink and binary files in language stats
+*.slx linguist-vendored
+*.mat linguist-vendored
+*.pdf linguist-documentation
+*.txt linguist-documentation
+
+# Force MATLAB recognition for all .m files
+*.m linguist-language=MATLAB
