@@ -45,6 +45,11 @@ If you use this repository or the code in your research, please cite:
 ## Contact
 
 Sebastian Zieglmeier
-Email: seb.zieglmeier@gmail.com
+
+Email: seb.zieglmeier@gmail.com, s.g.zieglmeier@its.uio.no
 
 GitHub: SebsDevLab
+
+Mathias Hudoba de Badyn
+
+Email: mathias.hudoba.de.badyn@its.uio.no
