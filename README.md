@@ -2,7 +2,7 @@
 Data-Enabled Predictive Control and Guidance for the REMUS 100 AUV
 
 ## Publication Reference  
-S. Zieglmeier, M. Hudoba de Badyn, N. D. Warakagoda, T. R. Krogstad, P. Engelstad, *Data-Enabled Predictive Control and Guidance for Autonomous Underwater Vehicles*, arXiv preprint, 2025. DOI / arXiv: [2510.25309](https://arxiv.org/abs/2510.25309) :contentReference[oaicite:1]{index=1}
+S. Zieglmeier, M. Hudoba de Badyn, N. D. Warakagoda, T. R. Krogstad, P. Engelstad, *Data-Enabled Predictive Control and Guidance for Autonomous Underwater Vehicles*, arXiv preprint, 2025. DOI / arXiv: [2510.25309](https://arxiv.org/abs/2510.25309)
 
 ---
 
