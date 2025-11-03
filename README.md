@@ -26,7 +26,7 @@ Key features:
 | YALMIP | latest | [YALMIP website](https://yalmip.github.io/download/) | GNU GPL |
 | MOSEK | 10.x or latest | [MOSEK downloads](https://www.mosek.com/downloads/) | Free for academic use |
 | MSS Toolbox (Fossen) | 2024 version | [MSS GitHub](https://github.com/cybergalactic/MSS) | MIT License |
-| This project | — | GitHub repo | See `LICENSE.md` |
+| This project | — | GitHub repo | MIT License |
 
 ---
 
