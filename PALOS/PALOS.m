@@ -115,6 +115,15 @@ function [psi_d_vec, theta_d_vec, y_e1, z_e1, alpha_c_hat1, beta_c_hat1, k2] = P
     v = x(2);
     w = x(3);
     phi = x(10);
+    theta = x(11);
+
+    % --- Compute U_h and U_v once from current state (Fossen Eq. 10-13).
+    % Held constant across the prediction horizon under the
+    % (u,v,w,phi) constant assumption; only the propagation angles vary.
+    alpha_c = atan( (v*sin(phi) + w*cos(phi)) / u );
+    U_v     = u * sqrt(1 + tan(alpha_c)^2);
+    beta_c  = atan( (v*cos(phi) - w*sin(phi)) / (U_v * cos(theta - alpha_c)) );
+    U_h     = U_v * cos(theta - alpha_c) * sqrt(1 + tan(beta_c)^2);
 
     % --- Preallocate reference sequences and predicted positions ---
     psi_d_vec = zeros(1, T_fut);
@@ -144,10 +153,12 @@ function [psi_d_vec, theta_d_vec, y_e1, z_e1, alpha_c_hat1, beta_c_hat1, k2] = P
         y_pos = pos(2);
         z_pos = pos(3);
 
-        % Predict forward position for NEXT ALOS evaluation (simple kinematics)
-        x_pred = x_pred + v * h * cos(psi_d)*cos(theta_d); 
-        y_pred = y_pred + v * h * sin(psi_d)*cos(theta_d);
-        z_pred = z_pred + v * h * sin(theta_d);
+        % Predict forward position for NEXT ALOS evaluation
+        % (Fossen amplitude-phase form Eq. 7-9, U_h, U_v constant over the horizon,
+        % alpha_c_hat and beta_c_hat from the current ALOS3D_pred step)
+        x_pred = x_pred + h * U_h * cos(psi_d + beta_c_hat); 
+        y_pred = y_pred + h * U_h * sin(psi_d + beta_c_hat);
+        z_pred = z_pred - h * U_v * sin(theta_d - alpha_c_hat);
 
         % Store horizon references
         psi_d_vec(i) = psi_d;
